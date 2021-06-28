@@ -50,7 +50,7 @@ app.get("/account/:q", function (req, res) {
       console.error(err);
       res.status(500).send("An error occurred, please try again later.");
     });    
-//  })();
+})();
 
 app.listen(port, function () {
   console.log(`Server is running on port ${port}`);
