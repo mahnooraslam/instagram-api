@@ -21,7 +21,7 @@ let HeaderOptions = {
 }
 
 let HeaderOptionsSearch = {
-  headers: {'x-rapidapi-key': 'd54f2722eamshd9a7361b4e9baa2p17c33djsn60caa28f7e25','x-rapidapi-host': 'instagram-scraper.p.rapidapi.com'}
+  headers: {'x-rapidapi-key': 'd54f2722eamshd9a7361b4e9baa2p17c33djsn60caa28f7e25','x-rapidapi-host': 'instagram85.p.rapidapi.com'}
 }
   
 app.get("/", function (req, res) {
@@ -43,7 +43,7 @@ app.get("/account/:userName", function (req, res) {
 app.get("/search/:q", function (req, res) {
   const query = req.params.q;
   axios
-    .request('https://instagram-scraper.p.rapidapi.com/api/v1/users'+query , HeaderOptionsSearch)
+    .request('https://instagram85.p.rapidapi.com/account/search/'+query , HeaderOptionsSearch)
     .then((response) => {
       res.json(response.data);
     })
