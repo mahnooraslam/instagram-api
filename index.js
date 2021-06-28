@@ -59,7 +59,7 @@ app.get("/search/:q", (req, res) => {
       res.send(resulte);
     }
   })();
-});
+
 app.listen(port, function () {
   console.log(`Server is running on port ${port}`);
 });
