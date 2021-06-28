@@ -38,27 +38,25 @@ app.get("/account/:userName", function (req, res) {
 });
 
 
-app.get("/search/:q", (req, res) => {
+app.get("/account/:userName", function (req, res) {
   const query = req.params.q;
   axios
     .request('https://instagram-growth.p.rapidapi.com/v2/profile?username='+query , HeaderOptions)
     .then((response) => {
       res.json(response.data);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send("An error occurred, please try again later.");
-    });
-
     const data = JSON.stringify(resulte);
     if (isHTML(String(data))) {
       res.send(tryagin);
     } else {
       console.log("Logged In");
-
       res.send(resulte);
     }
-  })();
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("An error occurred, please try again later.");
+    });    
+//  })();
 
 app.listen(port, function () {
   console.log(`Server is running on port ${port}`);
