@@ -7,9 +7,9 @@ app.use(cors({ origin: "*" }));
 
 var options = {
   method: 'GET',
-  url: 'https://instagram85.p.rapidapi.com/account/badgalriri/info',
+  url: 'https://instagram85.p.rapidapi.com/account/therealsaifii/info',
   headers: {
-    'x-rapidapi-key': 'eef6911d3fmshed2a542d137af63p1fd2f2jsn2180f0ddc901',
+    'x-rapidapi-key': 'd54f2722eamshd9a7361b4e9baa2p17c33djsn60caa28f7e25',
     'x-rapidapi-host': 'instagram85.p.rapidapi.com'
   }
 };
