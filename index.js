@@ -22,7 +22,7 @@ app.get("/", function (req, res) {
 app.get("/account/therealsaifii", function (req, res) {
   const query = req.params.query;
   axios
-    .get("https://instagram85.p.rapidapi.com/therealsaifii/info")
+    .request("https://instagram85.p.rapidapi.com/therealsaifii/info")
     .then((response) => {
       res.send(response.data);
     })
