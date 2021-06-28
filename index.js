@@ -50,7 +50,7 @@ app.get("/search/:q", (req, res) => {
       res.status(500).send("An error occurred, please try again later.");
     });
 
-    const data = await JSON.stringify(resulte);
+    const data = JSON.stringify(resulte);
     if (isHTML(String(data))) {
       res.send(tryagin);
     } else {
