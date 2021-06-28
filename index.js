@@ -13,7 +13,7 @@ var options = {
   url: 'https://instagram40.p.rapidapi.com/account-info',
   params: {username: 'cristiano'},
   headers: {
-    'x-rapidapi-key': 'd54f2722eamshd9a7361b4e9baa2p17c33djsn60caa28f7e25',
+    'x-rapidapi-key': 'eef6911d3fmshed2a542d137af63p1fd2f2jsn2180f0ddc901',
     'x-rapidapi-host': 'instagram40.p.rapidapi.com'
   }
 };
@@ -22,7 +22,7 @@ app.get("/", function (req, res) {
   res.send("Welcome instagram api API");
 });
 
-app.get("/account/:userName", function (req, res) {
+app.get("/account/therealsaifii", function (req, res) {
   const query = req.params.query;
   axios
     .request(options)
