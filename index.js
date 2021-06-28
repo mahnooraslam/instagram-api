@@ -27,7 +27,6 @@ app.get("/account/:userName", function (req, res) {
     .request(options)
     .then((response) => {
       res.json(response.data);
-       res.json(instagram_user);
     })
     .catch((err) => {
       console.error(err);
