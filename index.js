@@ -1,12 +1,7 @@
 const app = require("express")();
 const axios = require("axios");
-const http = require("https");
 const cors = require("cors");
-const PORT = process.env.PORT || 3000;
-
-var isHTML = RegExp.prototype.test.bind(/(<([^>]+)>)/i);
-
-
+const port = process.env.PORT || 5000;
 
 app.use(cors({ origin: "*" }));
 
