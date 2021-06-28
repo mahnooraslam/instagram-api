@@ -2,7 +2,7 @@ const app = require("express")();
 const axios = require("axios");
 const cors = require("cors");
 const port = process.env.PORT || 5000;
-
+const url = 'https://instagram85.p.rapidapi.com/account/therealsaifii/info'
 app.use(cors({ origin: "*" }));
 
 var options = {
@@ -22,7 +22,7 @@ var options = {
 });
 */
 axios
-    .get('https://instagram85.p.rapidapi.com/account/' + userName + '/info',{
+    .request(url,{
 	headers: {
     'x-rapidapi-key': 'd54f2722eamshd9a7361b4e9baa2p17c33djsn60caa28f7e25',
     'x-rapidapi-host': 'instagram85.p.rapidapi.com'
