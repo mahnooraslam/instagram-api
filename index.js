@@ -4,7 +4,7 @@ const cors = require("cors");
 const port = process.env.PORT || 5000;
 
 app.use(cors({ origin: "*" }));
-
+app.use(express.json());
 
 var options = {
   method: 'GET',
@@ -25,13 +25,13 @@ app.get("/account/:userName", function (req, res) {
     .request(options)
     .then((response) => {
       res.send(response.data);
-    const instagram_user = client.getUserByUsername({ username: `${user_name}`, });
+    const instagram_user = ({ username: `${user_name}`, });
     res.json(instagram_user);
     })
     .catch((err) => {
       console.error(err);
       res.status(500).send("An error occurred, please try again later.");
-    });
+    }();
 });
 
 app.listen(port, function () {
