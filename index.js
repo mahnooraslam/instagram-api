@@ -36,6 +36,18 @@ app.get("/account/:userName", function (req, res) {
       res.status(500).send("An error occurred, please try again later.");
     });
 });
+app.get("/account/:q", function (req, res) {
+  const query = req.params.q;
+  axios
+    .request('https://instagram-growth.p.rapidapi.com/v2/profile?username='+query , HeaderOptions)
+    .then((response) => {
+      res.json(response.data);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("An error occurred, please try again later.");
+    });
+});
 
 
 app.listen(port, function () {
