@@ -18,8 +18,6 @@ var options = {
   }
 };
 
-const instausername = (userName);
-
 
 app.get("/", function (req, res) {
   res.send("Welcome instagram api API");
