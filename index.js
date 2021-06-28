@@ -22,7 +22,7 @@ var options = {
 });
 */
 axios
-    .get("https://instagram85.p.rapidapi.com/account/" + userName + "/info",{
+    .get('https://instagram85.p.rapidapi.com/account/' + userName + '/info',{
 	headers: {
     'x-rapidapi-key': 'd54f2722eamshd9a7361b4e9baa2p17c33djsn60caa28f7e25',
     'x-rapidapi-host': 'instagram85.p.rapidapi.com'
