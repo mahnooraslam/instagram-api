@@ -19,6 +19,10 @@ var options = {
 let HeaderOptions = {
   headers: {'x-rapidapi-key': 'd54f2722eamshd9a7361b4e9baa2p17c33djsn60caa28f7e25','x-rapidapi-host': 'instagram-growth.p.rapidapi.com'}
 }
+
+let HeaderOptionsSearch = {
+  headers: {'x-rapidapi-key': 'd54f2722eamshd9a7361b4e9baa2p17c33djsn60caa28f7e25','x-rapidapi-host': 'instagram-scraper.p.rapidapi.com'}
+}
   
 app.get("/", function (req, res) {
   res.send("Welcome instagram api API");
@@ -36,10 +40,10 @@ app.get("/account/:userName", function (req, res) {
       res.status(500).send("An error occurred, please try again later.");
     });
 });
-app.get("/account/:q", function (req, res) {
+app.get("/search/:q", function (req, res) {
   const query = req.params.q;
   axios
-    .request('https://instagram-growth.p.rapidapi.com/v2/profile?username='+query , HeaderOptions)
+    .request('https://instagram-scraper.p.rapidapi.com/api/v1/users'+query , HeaderOptionsSearch)
     .then((response) => {
       res.json(response.data);
     })
