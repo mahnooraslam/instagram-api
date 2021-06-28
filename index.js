@@ -27,13 +27,6 @@ app.get("/account/:userName", function (req, res) {
   const query = req.params.query;
   axios
     .request("https://instagram40.p.rapidapi.com/account-info?username=${userName}")
-             {
-             headers: {
-    'x-rapidapi-key': 'eef6911d3fmshed2a542d137af63p1fd2f2jsn2180f0ddc901',
-    'x-rapidapi-host': 'instagram40.p.rapidapi.com'
-  }
-        })
-             
     .then((response) => {
       res.json(response.data);
     })
