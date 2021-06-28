@@ -5,8 +5,8 @@ const port = process.env.PORT || 3000;
 
 var isHTML = RegExp.prototype.test.bind(/(<([^>]+)>)/i);
 
-// app.use(cors({ origin: "*" }));
-app.use(express.json());
+app.use(cors({ origin: "*" }));
+// app.use(express.json());
 
 /*
 var options = {
