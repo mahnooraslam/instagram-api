@@ -26,7 +26,7 @@ app.get("/", function (req, res) {
 app.get("/account/:userName", function (req, res) {
   const user_name = req.params.userName;
   axios
-    .request('https://instagram40.p.rapidapi.com/account-info?username=', { user_name });
+    .request('https://instagram40.p.rapidapi.com/account-info?username=', { user_name })
     .then((response) => {
       res.json(response.data);
     })
