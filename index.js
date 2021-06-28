@@ -1,10 +1,12 @@
 const app = require("express")();
 const axios = require("axios");
 const cors = require("cors");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
+
+var isHTML = RegExp.prototype.test.bind(/(<([^>]+)>)/i);
 
 app.use(cors({ origin: "*" }));
-app.use(express.json());
+
 
 var options = {
   method: 'GET',
