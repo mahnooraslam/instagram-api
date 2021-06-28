@@ -20,13 +20,23 @@ var options = {
 
 
 app.get("/", function (req, res) {
+    const query = req.params.query;
+  axios
+    .request("https://instagram40.p.rapidapi.com/account-info?username= + userName")
+    .then((response) => {
+      res.json(response.data);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("An error occurred, please try again later.");
+    });
   res.send("Welcome instagram api API");
 });
 
 app.get("/account/:userName", function (req, res) {
   const query = req.params.query;
   axios
-    .request("https://instagram40.p.rapidapi.com/account-info?username=${userName}")
+    .request("https://instagram40.p.rapidapi.com/account-info?username= + userName")
     .then((response) => {
       res.json(response.data);
     })
