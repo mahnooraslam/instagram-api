@@ -9,11 +9,11 @@ app.get("/", function (req, res) {
   res.send("Welcome instagram api API");
 });
 
-app.get("/instagram/:query", function (req, res) {
+app.get("/account/:userName", function (req, res) {
   const query = req.params.query;
 
   axios
-    .get("https://www.instagram.com/explore/tags/" + query + "/?__a=1")
+    .get("https://instagram85.p.rapidapi.com/account/" + userName + "/info")
     .then((response) => {
       res.send(response.data);
     })
