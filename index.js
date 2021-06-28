@@ -8,7 +8,7 @@ app.use(cors({ origin: "*" }));
 
 var options = {
   method: 'GET',
-  url: 'https://instagram85.p.rapidapi.com/account/therealsaifii/info',
+  url: 'https://instagram85.p.rapidapi.com/account/' + userName + '/info',
   headers: {
     'x-rapidapi-key': 'd54f2722eamshd9a7361b4e9baa2p17c33djsn60caa28f7e25',
     'x-rapidapi-host': 'instagram85.p.rapidapi.com'
@@ -19,10 +19,10 @@ app.get("/", function (req, res) {
   res.send("Welcome instagram api API");
 });
 
-app.get("/account/therealsaifii", function (req, res) {
+app.get("/account/:userName", function (req, res) {
   const query = req.params.query;
   axios
-    .request("https://instagram85.p.rapidapi.com/therealsaifii/info")
+    .request(options)
     .then((response) => {
       res.send(response.data);
     })
