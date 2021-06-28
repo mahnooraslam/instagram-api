@@ -11,14 +11,16 @@ app.use(cors({ origin: "*" }));
 var options = {
   method: 'GET',
   url: 'https://instagram40.p.rapidapi.com/account-info',
-  params: {username: '+ userName +'},
+  params: {username: '${instausername}'},
   headers: {
     'x-rapidapi-key': 'eef6911d3fmshed2a542d137af63p1fd2f2jsn2180f0ddc901',
     'x-rapidapi-host': 'instagram40.p.rapidapi.com'
   }
 };
 
-  
+const instausername = (:userName);
+
+
 app.get("/", function (req, res) {
   res.send("Welcome instagram api API");
 });
