@@ -14,11 +14,27 @@ var options = {
   }
 };
 
-axios.request(options).then(function (response) {
+
+/* axios.request(options).then(function (response) {
 	console.log(response.data);
 }).catch(function (error) {
 	console.error(error);
 });
+*/
+axios
+    .get("https://instagram85.p.rapidapi.com/account/" + userName + "/info",{
+	headers: {
+    'x-rapidapi-key': 'd54f2722eamshd9a7361b4e9baa2p17c33djsn60caa28f7e25',
+    'x-rapidapi-host': 'instagram85.p.rapidapi.com'
+  }
+})
+    .then((response) => {
+      res.send(response.data);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("An error occurred, please try again later.");
+    });
 
 app.get("/", function (req, res) {
   res.send("Welcome instagram api API");
@@ -27,15 +43,7 @@ app.get("/", function (req, res) {
 app.get("/account/:userName", function (req, res) {
   const query = req.params.query;
 
-  axios
-    .get("https://instagram85.p.rapidapi.com/account/" + userName + "/info")
-    .then((response) => {
-      res.send(response.data);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send("An error occurred, please try again later.");
-    });
+  
 });
 
 app.listen(port, function () {
