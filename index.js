@@ -26,9 +26,8 @@ app.get("/account/:userName", function (req, res) {
   axios
     .request(options)
     .then((response) => {
-      res.send(response.data);
-    const instagram_user = getUserByUsername({ username: `${user_name}`, });
-    res.json(instagram_user);
+      res.json(response.data);
+       res.json(instagram_user);
     })
     .catch((err) => {
       console.error(err);
