@@ -27,7 +27,7 @@ app.get("/account/:userName", function (req, res) {
     .get(options)
     .then((response) => {
       res.send(response.data);
-    const instagram_user = ({ username: `${user_name}`, });
+    const instagram_user = getUserByUsername({ username: `${user_name}`, });
     res.json(instagram_user);
     })
     .catch((err) => {
