@@ -17,7 +17,7 @@ var options = {
 };
 
 let HeaderOptions = {
-  headers: {'x-rapidapi-key': 'eef6911d3fmshed2a542d137af63p1fd2f2jsn2180f0ddc901','x-rapidapi-host': 'instagram40.p.rapidapi.com'}
+  headers: {'x-rapidapi-key': 'eef6911d3fmshed2a542d137af63p1fd2f2jsn2180f0ddc901','x-rapidapi-host': 'instagram-growth.p.rapidapi.com'}
 }
   
 app.get("/", function (req, res) {
@@ -27,7 +27,7 @@ app.get("/", function (req, res) {
 app.get("/account/:userName", function (req, res) {
   const user_name = req.params.userName;
   axios
-    .request('https://instagram40.p.rapidapi.com/account-info?username='+user_name , HeaderOptions)
+    .request('https://instagram-growth.p.rapidapi.com/v2/profile?username='+user_name , HeaderOptions)
     .then((response) => {
       res.json(response.data);
     })
